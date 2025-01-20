@@ -4,8 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alang Portfolio</title>
+    <title>Alang's Portfolio</title>
+    <!-- Favicon default untuk tema terang -->
+    <link id="favicon-light" rel="icon" href="img/icon_forlighttheme/favicon.ico" type="image/x-icon">
+
+    <!-- Favicon default untuk tema gelap -->
+    <link id="favicon-dark" rel="icon" href="img/icon_fordarktheme/favicon.ico" type="image/x-icon" media="(prefers-color-scheme: dark)">
+
     <link href="src/output.css" rel="stylesheet">
+
+    <script>
+        // Script untuk mengubah favicon berdasarkan tema
+        function updateFavicon() {
+            const darkFavicon = document.getElementById("favicon-dark");
+            const lightFavicon = document.getElementById("favicon-light");
+
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                darkFavicon.disabled = false;
+                lightFavicon.disabled = true;
+            } else {
+                darkFavicon.disabled = true;
+                lightFavicon.disabled = false;
+            }
+        }
+
+        // Panggil fungsi updateFavicon ketika halaman dimuat
+        window.addEventListener('load', updateFavicon);
+
+        // Update favicon secara otomatis ketika tema berubah
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
+    </script>
 </head>
 
 <body>
@@ -15,11 +43,11 @@
             <div class="flex items-center justify-between relative">
                 <div class="px-4">
                     <a href="#home" class="block py-6">
-                        <img src="img/logoversi2.png" alt="Alang Logo" class="w-16 lg:w-24 h-auto rounded object-contain">
+                        <img src="img/logoversi2.png" alt="Alang Logo" class="w-16 lg:w-24 h-auto">
                     </a>
                 </div>
-                
-                
+
+
                 <div class="flex items-center px-4">
                     <button class="block absolute right-4 lg:hidden" id="hamburger" name="hamburger" type="button">
                         <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
@@ -377,7 +405,8 @@
             <p class="font-medium text-xs text-center text-slate-500">Created by <span class="text-pink-500">❤️</span>
                 <a href="https://instagram.com/alang.kun" target="_blank" class="font-bold text-primary">Muhammad
                     Syahrul Nizam</a>, using <a href="https://tailwindcss.com" target="_blank"
-                    class="font-bold text-sky-500">Tailwind CSS</a></p>
+                    class="font-bold text-sky-500">Tailwind CSS</a>
+            </p>
         </div>
     </footer>
     <!-- Footer Section End -->
