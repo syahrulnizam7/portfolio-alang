@@ -718,6 +718,14 @@ video {
   height: 2.25rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
 .w-9 {
   width: 2.25rem;
 }
@@ -787,6 +795,10 @@ video {
   overflow: hidden;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -848,6 +860,11 @@ video {
 
 .fill-current {
   fill: currentColor;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .p-3 {
@@ -1043,6 +1060,10 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
 }
@@ -1222,6 +1243,10 @@ iframe.portfolio-item {
 
   .lg\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .lg\:w-24 {
+    width: 6rem;
   }
 
   .lg\:max-w-full {
